@@ -31,29 +31,30 @@
 
     "files": [
       "main.js",
-      "package.json"
+      "package.json",
+      "assets/**/*"
     ],
 
     "asar": true,
 
     "win": {
-  "target": [
-    {
-      "target": "nsis",
-      "arch": ["x64"]
-    }
-  ],
-  "icon": "assets/icon.ico"
-},
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "assets/icon.ico"
+    },
 
-"nsis": {
-  "oneClick": false,
-  "allowToChangeInstallationDirectory": true,
-  "createDesktopShortcut": true,
-  "createStartMenuShortcut": true,
-  "shortcutName": "S10 Telemedicine",
-  "runAfterFinish": true
-},
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "S10 Telemedicine",
+      "runAfterFinish": true
+    },
 
     "mac": {
       "target": [
