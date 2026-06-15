@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #f8f9fa;
+      display: flex;
+      align-items: center;
+      height: 48px;
+      padding: 0 12px;
+      box-sizing: border-box;
+      border-bottom: 1px solid #e0e0e0;
+      user-select: none;
+    }
+    .btn {
+      background: #ffffff;
+      border: 1px solid #ced4da;
+      padding: 6px 12px;
+      margin-right: 6px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s ease;
+    }
+    .btn:hover {
+      background: #e2e6ea;
+    }
+    .btn:active {
+      background: #dae0e5;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="btn" id="back">← Back</button>
+  <button class="btn" id="forward">→ Forward</button>
+  <button class="btn" id="refresh">↻ Refresh</button>
+  <button class="btn" id="home">🏠 Home</button>
+
+  <script>
+    document.getElementById('back').addEventListener('click', () => window.navAPI.back());
+    document.getElementById('forward').addEventListener('click', () => window.navAPI.forward());
+    document.getElementById('refresh').addEventListener('click', () => window.navAPI.refresh());
+    document.getElementById('home').addEventListener('click', () => window.navAPI.home());
+  </script>
+</body>
+</html>
