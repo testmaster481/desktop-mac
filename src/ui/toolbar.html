@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'self' 'unsafe-inline'">
   <style>
     body {
       margin: 0;
@@ -15,7 +17,7 @@
       user-select: none;
     }
     .btn {
-      background: #ffffff;
+      background: #fff;
       border: 1px solid #ced4da;
       padding: 6px 12px;
       margin-right: 6px;
@@ -25,28 +27,21 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      transition: background 0.15s ease;
+      transition: background .15s ease;
     }
-    .btn:hover {
-      background: #e2e6ea;
-    }
-    .btn:active {
-      background: #dae0e5;
-    }
+    .btn:hover { background: #e2e6ea; }
+    .btn:active { background: #dae0e5; }
   </style>
 </head>
 <body>
-
   <button class="btn" id="back">← Back</button>
   <button class="btn" id="forward">→ Forward</button>
   <button class="btn" id="refresh">↻ Refresh</button>
   <button class="btn" id="home">🏠 Home</button>
-
   <script>
-    document.getElementById('back').addEventListener('click', () => window.navAPI.back());
-    document.getElementById('forward').addEventListener('click', () => window.navAPI.forward());
-    document.getElementById('refresh').addEventListener('click', () => window.navAPI.refresh());
-    document.getElementById('home').addEventListener('click', () => window.navAPI.home());
+    for (const id of ['back', 'forward', 'refresh', 'home']) {
+      document.getElementById(id).addEventListener('click', () => window.navAPI[id]());
+    }
   </script>
 </body>
 </html>
